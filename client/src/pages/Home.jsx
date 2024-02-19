@@ -19,7 +19,7 @@ const Home = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const result = await axios.get("http://localhost:5000/blogs")
+        const result = await axios.get("https://blogit-backend-496k.onrender.com/blogs")
         setBlogs(result.data)
       } catch (error) {
         console.log(error);
@@ -28,7 +28,7 @@ const Home = () => {
 
     const fetchSavedBlogs = async () => {
       try {
-        const result = await axios.get(`http://localhost:5000/blogs/savedBlogs/ids/${userID}`)
+        const result = await axios.get(`https://blogit-backend-496k.onrender.com/blogs/savedBlogs/ids/${userID}`)
         setSavedBlogs(result.data.savedBlogs)
       } catch (error) {
         console.log(error);
@@ -41,7 +41,7 @@ const Home = () => {
 
   const saveBlog = async (blogID) => {
     try {
-      const result = await axios.put("http://localhost:5000/blogs",
+      const result = await axios.put("https://blogit-backend-496k.onrender.com/blogs",
         { 
           blogID, 
           userID
