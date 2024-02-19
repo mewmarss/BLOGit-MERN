@@ -12,7 +12,7 @@ const SavedBlog = () => {
   useEffect(() => {
     const fetchSavedBlogs = async () => {
       try {
-        const result = await axios.get(`http://localhost:5000/blogs/savedBlogs/${userID}`);
+        const result = await axios.get(`https://blogit-backend-496k.onrender.com/blogs/savedBlogs/${userID}`);
         setSavedBlogs(result.data.savedBlogs);
       } catch (error) {
         console.log(error);
@@ -24,7 +24,7 @@ const SavedBlog = () => {
 
   const handleDelete = async (blogID) => {
     try {
-      await axios.delete(`http://localhost:5000/blogs/savedBlogs/${userID}/${blogID}`);
+      await axios.delete(`https://blogit-backend-496k.onrender.com/blogs/savedBlogs/${userID}/${blogID}`);
       setSavedBlogs(savedBlogs.filter(blog => blog._id !== blogID));
       enqueueSnackbar("Saved blog removed", {variant: 'success',autoHideDuration:2000})
     } catch (error) {
