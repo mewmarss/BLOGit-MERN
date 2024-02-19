@@ -20,7 +20,7 @@ const CreateBlog = () => {
     event.preventDefault()
 
     try {
-      await axios.post("http://localhost:5000/blogs",{title,content,userOwner},
+      await axios.post("https://blogit-backend-496k.onrender.com/blogs",{title,content,userOwner},
       {headers: {authorization: cookies.access_token}}
       )
       enqueueSnackbar("Blog posted", {variant: 'success',autoHideDuration:2000})
